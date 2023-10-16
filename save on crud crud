@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <form onsubmit="saveToLocalStorage"></form>
+        <h1>TODOS</h1>
+        <form id="todos-form">
+            <label for="todos">ToDos</label>
+            <input type="text" id="todos" required>
+            <label for="Description">Description</label>
+            <input type="text" id="Description" required>
+            <input type="checkbox" id="selectCheckbox" class="btn btn-primary">
+            <button type="button" class="deletebtn">Delete</button>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></script>
+        fuction saveToLocalStorage(event){
+            event.preventDefault();
+            const ToDos=event.target.todos.value;
+            const Description=event.target.Description.value;
+            const obj={
+                ToDos,
+                Description
+            }
+            axios.post{https://crudcrud.com/api/8f44fa65d8be47869fc85bbaa15b4ef4,obj}
+            .then((respose)=>{
+                showNewUserOnScreen(response.data);
+                console.log(response)
+            })
+            .catch((err)=>{
+                console.log(err);
+            }
+
+            localStorage.setItem(obj.Description,JSON.stringify(obj))
+            showNewUserOnScreen(obj)
+            
+        }
+        </form>
+        
+    </div>
+</body>
+</html>
